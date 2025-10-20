@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f0f4ff" />
+      <stop offset="100%" stop-color="#d8e1f0" />
+    </linearGradient>
+    <linearGradient id="couch" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b56953" />
+      <stop offset="100%" stop-color="#93432d" />
+    </linearGradient>
+    <linearGradient id="cushion" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d38c73" />
+      <stop offset="100%" stop-color="#b56953" />
+    </linearGradient>
+    <linearGradient id="snake" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4caf50" />
+      <stop offset="100%" stop-color="#2e7d32" />
+    </linearGradient>
+    <radialGradient id="snakeBelly" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a5d6a7" />
+      <stop offset="100%" stop-color="#66bb6a" />
+    </radialGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg)" />
+
+  <rect x="60" y="210" width="480" height="120" rx="20" fill="url(#couch)" />
+  <rect x="110" y="170" width="140" height="100" rx="18" fill="url(#cushion)" />
+  <rect x="230" y="170" width="140" height="100" rx="18" fill="url(#cushion)" />
+  <rect x="350" y="170" width="140" height="100" rx="18" fill="url(#cushion)" />
+  <rect x="50" y="250" width="500" height="40" rx="18" fill="#7d2f1f" opacity="0.6" />
+  <rect x="90" y="320" width="40" height="40" rx="12" fill="#542114" />
+  <rect x="470" y="320" width="40" height="40" rx="12" fill="#542114" />
+
+  <path d="M 160 220 C 140 200, 130 160, 170 140 C 210 120, 250 150, 270 190 C 290 230, 330 250, 370 240 C 410 230, 440 200, 430 170 C 420 140, 380 130, 350 150" fill="none" stroke="url(#snake)" stroke-width="26" stroke-linecap="round" />
+  <path d="M 350 150 C 370 140, 400 145, 420 165" fill="none" stroke="url(#snake)" stroke-width="20" stroke-linecap="round" />
+  <ellipse cx="420" cy="165" rx="18" ry="14" fill="url(#snakeBelly)" transform="rotate(15 420 165)" />
+  <circle cx="410" cy="160" r="3" fill="#1b5e20" />
+  <circle cx="426" cy="168" r="3" fill="#1b5e20" />
+  <path d="M 436 165 L 450 170" stroke="#c62828" stroke-width="3" stroke-linecap="round" />
+  <path d="M 450 170 L 456 165" stroke="#c62828" stroke-width="2" stroke-linecap="round" />
+  <path d="M 200 210 Q 210 200, 220 205 T 240 210" fill="none" stroke="#f8f4e8" stroke-width="6" stroke-linecap="round" opacity="0.6" />
+  <path d="M 310 235 Q 320 225, 330 230 T 350 235" fill="none" stroke="#f8f4e8" stroke-width="6" stroke-linecap="round" opacity="0.4" />
+
+  <path d="M 80 200 Q 60 180, 80 160 L 520 160 Q 540 180, 520 200 Z" fill="#c47a63" opacity="0.8" />
+  <path d="M 100 190 Q 90 180, 100 170 L 500 170 Q 510 180, 500 190 Z" fill="#d38c73" opacity="0.8" />
+</svg>
