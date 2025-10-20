@@ -13,14 +13,25 @@
       <stop offset="0%" stop-color="#d38c73" />
       <stop offset="100%" stop-color="#b56953" />
     </linearGradient>
-    <linearGradient id="snake" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#4caf50" />
-      <stop offset="100%" stop-color="#2e7d32" />
+    <!-- Enhanced snake gradients with more vibrant colors -->
+    <linearGradient id="snake" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7cb342" />
+      <stop offset="50%" stop-color="#558b2f" />
+      <stop offset="100%" stop-color="#33691e" />
+    </linearGradient>
+    <linearGradient id="snakeShine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9ccc65" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#7cb342" stop-opacity="0.2" />
     </linearGradient>
     <radialGradient id="snakeBelly" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#a5d6a7" />
-      <stop offset="100%" stop-color="#66bb6a" />
+      <stop offset="0%" stop-color="#f4ff81" />
+      <stop offset="50%" stop-color="#dce775" />
+      <stop offset="100%" stop-color="#c0ca33" />
     </radialGradient>
+    <!-- Pattern for snake scales -->
+    <pattern id="scales" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <ellipse cx="10" cy="10" rx="8" ry="6" fill="#558b2f" opacity="0.3"/>
+    </pattern>
   </defs>
   <rect width="600" height="400" fill="url(#bg)" />
 
@@ -32,15 +43,50 @@
   <rect x="90" y="320" width="40" height="40" rx="12" fill="#542114" />
   <rect x="470" y="320" width="40" height="40" rx="12" fill="#542114" />
 
-  <path d="M 160 220 C 140 200, 130 160, 170 140 C 210 120, 250 150, 270 190 C 290 230, 330 250, 370 240 C 410 230, 440 200, 430 170 C 420 140, 380 130, 350 150" fill="none" stroke="url(#snake)" stroke-width="26" stroke-linecap="round" />
-  <path d="M 350 150 C 370 140, 400 145, 420 165" fill="none" stroke="url(#snake)" stroke-width="20" stroke-linecap="round" />
-  <ellipse cx="420" cy="165" rx="18" ry="14" fill="url(#snakeBelly)" transform="rotate(15 420 165)" />
-  <circle cx="410" cy="160" r="3" fill="#1b5e20" />
-  <circle cx="426" cy="168" r="3" fill="#1b5e20" />
-  <path d="M 436 165 L 450 170" stroke="#c62828" stroke-width="3" stroke-linecap="round" />
-  <path d="M 450 170 L 456 165" stroke="#c62828" stroke-width="2" stroke-linecap="round" />
-  <path d="M 200 210 Q 210 200, 220 205 T 240 210" fill="none" stroke="#f8f4e8" stroke-width="6" stroke-linecap="round" opacity="0.6" />
-  <path d="M 310 235 Q 320 225, 330 230 T 350 235" fill="none" stroke="#f8f4e8" stroke-width="6" stroke-linecap="round" opacity="0.4" />
+  <!-- Snake body with shadow -->
+  <path d="M 160 220 C 140 200, 130 160, 170 140 C 210 120, 250 150, 270 190 C 290 230, 330 250, 370 240 C 410 230, 440 200, 430 170 C 420 140, 380 130, 350 150" fill="none" stroke="#2e7d32" stroke-width="30" stroke-linecap="round" opacity="0.3" />
+
+  <!-- Main snake body -->
+  <path d="M 160 220 C 140 200, 130 160, 170 140 C 210 120, 250 150, 270 190 C 290 230, 330 250, 370 240 C 410 230, 440 200, 430 170 C 420 140, 380 130, 350 150" fill="none" stroke="url(#snake)" stroke-width="28" stroke-linecap="round" />
+
+  <!-- Scale pattern overlay -->
+  <path d="M 160 220 C 140 200, 130 160, 170 140 C 210 120, 250 150, 270 190 C 290 230, 330 250, 370 240 C 410 230, 440 200, 430 170 C 420 140, 380 130, 350 150" fill="none" stroke="url(#scales)" stroke-width="28" stroke-linecap="round" />
+
+  <!-- Shine highlight on body -->
+  <path d="M 165 215 C 145 198, 138 165, 173 147 C 208 130, 245 155, 265 192" fill="none" stroke="url(#snakeShine)" stroke-width="10" stroke-linecap="round" opacity="0.6" />
+
+  <!-- Snake neck and head -->
+  <path d="M 350 150 C 370 140, 400 145, 420 165" fill="none" stroke="#2e7d32" stroke-width="24" stroke-linecap="round" opacity="0.3" />
+  <path d="M 350 150 C 370 140, 400 145, 420 165" fill="none" stroke="url(#snake)" stroke-width="22" stroke-linecap="round" />
+
+  <!-- Head shape with gradient -->
+  <ellipse cx="425" cy="167" rx="22" ry="18" fill="url(#snake)" transform="rotate(15 425 167)" />
+  <ellipse cx="425" cy="167" rx="20" ry="16" fill="url(#snakeShine)" transform="rotate(15 425 167)" opacity="0.4" />
+
+  <!-- Belly marking on head -->
+  <ellipse cx="420" cy="170" rx="16" ry="12" fill="url(#snakeBelly)" transform="rotate(15 420 170)" />
+
+  <!-- Eyes with more detail -->
+  <ellipse cx="412" cy="162" rx="6" ry="7" fill="#f0f0f0" transform="rotate(15 412 162)" />
+  <ellipse cx="428" cy="170" rx="6" ry="7" fill="#f0f0f0" transform="rotate(15 428 170)" />
+  <ellipse cx="412" cy="163" rx="4" ry="5" fill="#1a1a1a" transform="rotate(15 412 163)" />
+  <ellipse cx="428" cy="171" rx="4" ry="5" fill="#1a1a1a" transform="rotate(15 428 171)" />
+  <ellipse cx="413" cy="161" rx="1.5" ry="2" fill="#ffffff" transform="rotate(15 413 161)" />
+  <ellipse cx="429" cy="169" rx="1.5" ry="2" fill="#ffffff" transform="rotate(15 429 169)" />
+
+  <!-- Improved forked tongue -->
+  <path d="M 438 168 L 452 172" stroke="#e53935" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M 452 172 L 458 168" stroke="#e53935" stroke-width="1.8" stroke-linecap="round" />
+  <path d="M 452 172 L 458 176" stroke="#e53935" stroke-width="1.8" stroke-linecap="round" />
+
+  <!-- Enhanced pattern stripes on body -->
+  <path d="M 200 210 Q 210 200, 220 205 T 240 210" fill="none" stroke="#f4ff81" stroke-width="7" stroke-linecap="round" opacity="0.7" />
+  <ellipse cx="205" cy="207" rx="10" ry="6" fill="#2e7d32" opacity="0.4" transform="rotate(-20 205 207)" />
+  <ellipse cx="225" cy="207" rx="10" ry="6" fill="#2e7d32" opacity="0.4" transform="rotate(-20 225 207)" />
+
+  <path d="M 310 235 Q 320 225, 330 230 T 350 235" fill="none" stroke="#f4ff81" stroke-width="7" stroke-linecap="round" opacity="0.6" />
+  <ellipse cx="315" cy="232" rx="10" ry="6" fill="#2e7d32" opacity="0.4" transform="rotate(10 315 232)" />
+  <ellipse cx="335" cy="232" rx="10" ry="6" fill="#2e7d32" opacity="0.4" transform="rotate(10 335 232)" />
 
   <path d="M 80 200 Q 60 180, 80 160 L 520 160 Q 540 180, 520 200 Z" fill="#c47a63" opacity="0.8" />
   <path d="M 100 190 Q 90 180, 100 170 L 500 170 Q 510 180, 500 190 Z" fill="#d38c73" opacity="0.8" />
