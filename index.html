@@ -12,8 +12,24 @@
       align-items: center;
       min-height: 100vh;
       margin: 0;
-      background-color: #f5f5f5;
+      position: relative;
+      background: #f5f5f5 url('snake-on-couch.svg') center / cover no-repeat fixed;
       color: #333;
+    }
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.65);
+      z-index: 0;
+    }
+    p {
+      position: relative;
+      z-index: 1;
+      padding: 1rem 1.5rem;
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
   </style>
 </head>
