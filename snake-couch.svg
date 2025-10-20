@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="couchGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9b4dca" />
+      <stop offset="100%" stop-color="#6a2a8c" />
+    </linearGradient>
+    <linearGradient id="snakeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5cb85c" />
+      <stop offset="100%" stop-color="#3d8b3d" />
+    </linearGradient>
+  </defs>
+  <rect x="40" y="160" width="320" height="80" rx="20" fill="url(#couchGradient)" />
+  <rect x="80" y="120" width="240" height="50" rx="20" fill="#7f3fbf" />
+  <rect x="60" y="210" width="280" height="40" rx="20" fill="#58277a" />
+  <path d="M120 170 C150 120, 230 120, 260 170" fill="none" stroke="url(#snakeGradient)" stroke-width="18" stroke-linecap="round" />
+  <path d="M260 170 C280 200, 310 200, 320 180" fill="none" stroke="url(#snakeGradient)" stroke-width="18" stroke-linecap="round" />
+  <circle cx="110" cy="165" r="12" fill="#5cb85c" />
+  <circle cx="113" cy="162" r="3" fill="#222" />
+  <circle cx="107" cy="162" r="3" fill="#222" />
+  <path d="M98 166 L92 170 L98 174" fill="none" stroke="#d9534f" stroke-width="3" stroke-linecap="round" />
+  <ellipse cx="120" cy="195" rx="15" ry="8" fill="#4e2b71" opacity="0.4" />
+  <ellipse cx="280" cy="215" rx="20" ry="10" fill="#4e2b71" opacity="0.4" />
+  <rect x="55" y="140" width="30" height="60" rx="10" fill="#7f3fbf" />
+  <rect x="315" y="140" width="30" height="60" rx="10" fill="#7f3fbf" />
+</svg>
