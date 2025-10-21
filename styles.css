@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+:root {
+  color-scheme: dark;
+  --terminal-bg: #050807;
+  --terminal-text: #6fffb8;
+  --terminal-accent: #2f9e74;
+  --terminal-dim: #2f4f43;
+  --scanline-color: rgba(0, 0, 0, 0.1);
+  --glow: 0 0 12px rgba(111, 255, 184, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Share Tech Mono', monospace;
+  background: radial-gradient(circle at center, #0b1311, #030504 70%);
+  color: var(--terminal-text);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.noise {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1px,
+      rgba(0, 0, 0, 0.05) 1px,
+      rgba(0, 0, 0, 0.05) 2px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.01),
+      rgba(255, 255, 255, 0.01) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  mix-blend-mode: screen;
+  opacity: 0.35;
+  animation: flicker 6s infinite;
+  z-index: 0;
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  45% {
+    opacity: 0.25;
+  }
+  55% {
+    opacity: 0.45;
+  }
+  75% {
+    opacity: 0.3;
+  }
+}
+
+#terminal {
+  position: relative;
+  width: min(960px, 90vw);
+  height: min(620px, 90vh);
+  background: rgba(2, 4, 3, 0.9);
+  border: 1px solid var(--terminal-dim);
+  padding: 2rem 2.5rem 2rem;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.5), inset 0 0 25px rgba(95, 160, 125, 0.15);
+  overflow: hidden;
+  z-index: 1;
+}
+
+#terminal::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.02) 0%,
+    rgba(0, 0, 0, 0.15) 60%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.header {
+  text-align: center;
+  letter-spacing: 0.2em;
+  margin-bottom: 1.5rem;
+}
+
+.header h1 {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  text-transform: uppercase;
+  margin: 0;
+  color: var(--terminal-text);
+  text-shadow: var(--glow);
+}
+
+.header .sub {
+  font-size: clamp(0.7rem, 1.6vw, 0.95rem);
+  margin: 0.35rem 0 0;
+  color: var(--terminal-accent);
+}
+
+.screen {
+  height: calc(100% - 6rem);
+  overflow-y: auto;
+  border: 1px solid rgba(111, 255, 184, 0.15);
+  padding: 1rem;
+  background: radial-gradient(circle at 50% 20%, rgba(47, 158, 116, 0.12), transparent 65%);
+  backdrop-filter: blur(2px);
+  position: relative;
+}
+
+.screen::-webkit-scrollbar {
+  width: 6px;
+}
+
+.screen::-webkit-scrollbar-thumb {
+  background: var(--terminal-accent);
+}
+
+.message {
+  margin: 0.25rem 0;
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+.message.system {
+  color: var(--terminal-accent);
+}
+
+.message.alert {
+  color: #ffb347;
+}
+
+.message.error {
+  color: #f86c6b;
+}
+
+.message .prompt {
+  color: var(--terminal-text);
+  margin-right: 0.75rem;
+}
+
+#terminal-form {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+#prompt-label {
+  font-size: 0.95rem;
+  color: var(--terminal-accent);
+}
+
+#terminal-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--terminal-accent);
+  padding: 0.35rem 0.5rem;
+  color: var(--terminal-text);
+  font-size: 0.95rem;
+  caret-color: var(--terminal-text);
+  outline: none;
+  transition: border-color 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+#terminal-input:focus {
+  border-color: var(--terminal-text);
+  box-shadow: var(--glow);
+}
+
+@media (max-width: 600px) {
+  #terminal {
+    padding: 1.5rem;
+  }
+
+  .header {
+    letter-spacing: 0.15em;
+  }
+
+  #terminal-input {
+    font-size: 0.8rem;
+  }
+}

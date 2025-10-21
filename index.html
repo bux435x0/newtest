@@ -1,39 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test Page</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      position: relative;
-      background: #f5f5f5 url('snake-on-couch.svg') center / cover no-repeat fixed;
-      color: #333;
-    }
-    body::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(255, 255, 255, 0.65);
-      z-index: 0;
-    }
-    p {
-      position: relative;
-      z-index: 1;
-      padding: 1rem 1.5rem;
-      background-color: rgba(255, 255, 255, 0.85);
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    }
-  </style>
-</head>
-<body>
-  <p>this is a sneaky test</p>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mother Terminal Simulation</title>
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="description" content="Simulation of the USCSS Nostromo's MOTHER computer with a hidden narrative experience." />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <main id="terminal" role="application" aria-label="MOTHER computer interface">
+      <div class="header">
+        <h1>USCSS NOSTROMO // MOTHER 6000</h1>
+        <p class="sub">WEYLAND-YUTANI CORP // COMMERCIAL HAULER</p>
+      </div>
+      <section id="terminal-output" class="screen" aria-live="polite"></section>
+      <form id="terminal-form" autocomplete="off">
+        <label for="terminal-input" id="prompt-label">MOTHER&gt;</label>
+        <input
+          id="terminal-input"
+          name="command"
+          type="text"
+          spellcheck="false"
+          autocomplete="off"
+          aria-describedby="prompt-label"
+        />
+      </form>
+    </main>
+    <script src="script.js" type="module"></script>
+  </body>
 </html>
